@@ -16,13 +16,14 @@ Press 4: Exit""")
 def createGarden():
     wantLawn = input("Do you want a lawn: y/n\n>>").lower()
     if wantLawn == "y":
-        lengthOfLawn = int(input("Enter length of lawn:\n>> "))
-        widthOfLawn = int(input("Enter width of lawn:\n>> "))
+        lengthOfLawn = float(input("Enter length of lawn:\n>> "))
+        widthOfLawn = float(input("Enter width of lawn:\n>> "))
         totalSizeOfLawn = lengthOfLawn*widthOfLawn
         totalPriceOfLawn = totalSizeOfLawn * 15.50
         totalTimeOfLawn = totalSizeOfLawn * 20
-        print("Price:",totalSizeOfLawn+"m^2, Time Taken:",totalTimeOfLawn)
-
+        print("Price:",totalPriceOfLawn+"m^2, Time Taken:",totalTimeOfLawn)
+    elif wantLawn == "n":
+        pass
 def reviews():
     pass
 
