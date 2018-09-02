@@ -39,12 +39,21 @@ def createGarden():
     if wantWoodenDeck == "y":
         lengthOfWoodenDeck = float(input("Enter length of WoodenDeck:\\n>> "))
         widthOfWoodenDeck = float(input("Enter width of Wooden Deck:\n>> "))
-        totalSizeOfWoodenDeck = lengthOfWoodenDeck * widthOfLawn
-        totalPriceOfWoodenDeck = totalSizeOfWoodenDeck * 15.50
-        totalTimeOfWoodenDeck = totalSizeOfWoodenDeck * 20
+        totalSizeOfWoodenDeck = lengthOfWoodenDeck * widthOfWoodenDeck
+        totalPriceOfWoodenDeck = totalSizeOfWoodenDeck * 15.75
+        totalTimeOfWoodenDeck = totalSizeOfWoodenDeck * 30
         print("Price: £", totalPriceOfWoodenDeck, "m^2, Time to Take:", totalTimeOfWoodenDeck, "minutes")
     elif wantWoodenDeck== "n":
         print("No WoodenDeck for you")
+    if wantPond == "y":
+        lengthOfPond = float(input("Enter length of WoodenDeck:\\n>> "))
+        widthOfPond = float(input("Enter width of Wooden Deck:\n>> "))
+        totalSizeOfPond = lengthOfPond * widthOfPond
+        totalPriceOfPond = totalSizeOfPond * 15.75
+        totalTimeOfPond = totalSizeOfPond * 30
+        print("Price: £", totalPriceOfPond, "m^2, Time to Take:", totalTimeOfPond, "minutes")
+    elif wantPond== "n":
+        print("No Pond for you")
 def reviews():
     pass
 
