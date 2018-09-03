@@ -72,9 +72,9 @@ def createGarden():
         print("Price: £", priceOflamp, "m^2, Time to Take:", timeToTakeForlamp, "minutes")
     elif wantlamp == "n":
         print("No lamp for you:")
-    garden.write("Lawn:",totalPriceOfLawn,totalSizeOfLawn,totalTimeOfLawn",","Concrete Patio",totalPriceOfConcretePatio,totalSizeOfConcretePatio,totalTimeOfConcretePatio,
-",","Wooden deck", totalPriceOfWoodenDeck,totalSizeOfWoodenDeck,totalTimeOfWoodenDeck,",","Pond",totalPriceOfPond,totalSizeOfPond,totalTimeOfPond,",","Water feature",
-priceOfWaterFeature,howManyWaterFeatures,timeToTakeForWaterFeature,",","Garden lights",priceOflamp,howManylamp,timeToTakeForlamp)
+    garden.write("Lawn:"+"£"+totalPriceOfLawn+totalSizeOfLawn+"m^2"+totalTimeOfLawn+"minutes"+", Concrete Patio"+"£"+totalPriceOfConcretePatio+totalSizeOfConcretePatio+"m^2"+totalTimeOfConcretePatio+
+"minutes"+", Wooden deck"+"£"+totalPriceOfWoodenDeck+totalSizeOfWoodenDeck+"m^2"+totalTimeOfWoodenDeck+"minutes"+", Pond"+"£"+totalPriceOfPond+totalSizeOfPond+"m^2"+totalTimeOfPond+"minutes"+" ,Water feature"+
+"£"+priceOfWaterFeature+",Water features:"+howManyWaterFeatures+timeToTakeForWaterFeature+"minutes"+", Garden lights"+"£"+priceOflamp+"Lamps"+howManylamp+timeToTakeForlamp+"minutes")
     garden.close()
     startMenu()
 def reviews():
