@@ -15,6 +15,7 @@ Press 4: Exit
         exit()
 
 def createGarden():
+    garden = open("garden.txt", "a")
     wantLawn = input("Do you want a lawn: y/n\n>>").lower()
     if wantLawn == "y":
         lengthOfLawn = float(input("Enter length of lawn:\n>> "))
@@ -71,6 +72,10 @@ def createGarden():
         print("Price: £", priceOflamp, "m^2, Time to Take:", timeToTakeForlamp, "minutes")
     elif wantlamp == "n":
         print("No lamp for you:")
+    garden.write("Lawn:",totalPriceOfLawn,totalSizeOfLawn,totalTimeOfLawn",","Concrete Patio",totalPriceOfConcretePatio,totalSizeOfConcretePatio,totalTimeOfConcretePatio,
+",","Wooden deck", totalPriceOfWoodenDeck,totalSizeOfWoodenDeck,totalTimeOfWoodenDeck,",","Pond",totalPriceOfPond,totalSizeOfPond,totalTimeOfPond,",","Water feature",
+priceOfWaterFeature,howManyWaterFeatures,timeToTakeForWaterFeature,",","Garden lights",priceOflamp,howManylamp,timeToTakeForlamp)
+    garden.close()
     startMenu()
 def reviews():
     pass
