@@ -10,14 +10,17 @@ Press 4: Exit
     elif menuOption == "2":
         reviews()
     elif menuOption == "3":
-        oldDocumnents()
+        Documnents()
     elif menuOption == "4":
         exit()
+    else:
+        print("invalid option")
+        startMenu()
 
 
-def oldDocumnents():
+def Documnents():
     garden = open("garden.txt", "a")
-    garden.write(str(theLawn)
+    garden.write(tuple(theLawn))
     garden.close()
     startMenu()
 
@@ -32,7 +35,7 @@ def wantLawn():
         totalPriceOfLawn = totalSizeOfLawn * 15.50
         totalTimeOfLawn = totalSizeOfLawn * 20
         print("Price: £", totalPriceOfLawn, "m^2, Time to Take:", totalTimeOfLawn, "minutes")
-        TheLawn = totalPriceOfLawn, totalTimeOfLawn, totalSizeOfLawn
+        theLawn = totalPriceOfLawn,totalTimeOfLawn,totalSizeOfLawn
     elif wantLawnAnswer == "n":
         print("No lawn for you")
     else:
@@ -41,6 +44,7 @@ def wantLawn():
     wantConcretePatio()
 
 def wantConcretePatio():
+    global theConcretePatio
     wantConcretePatioAnswer = input("Do you want a Concrete Patio: y/n\n>>").lower()
     if wantConcretePatioAnswer == "y":
         lengthOfConcretePatio = float(input("Enter length of Concrete Patio:\n>> "))
@@ -49,6 +53,7 @@ def wantConcretePatio():
         totalPriceOfConcretePatio = totalSizeOfConcretePatio * 20.99
         totalTimeOfConcretePatio = totalSizeOfConcretePatio * 20
         print("Price: £", totalPriceOfConcretePatio, "m^2, Time to Take:", totalTimeOfConcretePatio, "minutes")
+        theConcretePatio = totalPriceOfConcretePatio,totalTimeOfConcretePatio,totalSizeOfConcretePatio
     elif wantConcretePatioAnswer == "n":
         print("No Concrete Patio for you")
     else:
@@ -117,6 +122,7 @@ def wantLamp():
         print("Invalid Option, try again.")
         wantLamp()
 
+    Documnents()
 
 def reviews():
     pass
