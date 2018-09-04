@@ -6,7 +6,7 @@ Press 4: Exit
 >>""")
 
     if menuOption == "1":
-        createGarden()
+        wantLawn()
     elif menuOption == "2":
         reviews()
     elif menuOption == "3":
@@ -14,73 +14,112 @@ Press 4: Exit
     elif menuOption == "4":
         exit()
 
-def createGarden():
+
+def oldDocumnents():
     garden = open("garden.txt", "a")
-    wantLawn = input("Do you want a lawn: y/n\n>>").lower()
-    if wantLawn == "y":
+    garden.write(str(theLawn)
+    garden.close()
+    startMenu()
+
+
+def wantLawn():
+    global theLawn
+    wantLawnAnswer = input("Do you want a lawn: y/n\n>>").lower()
+    if wantLawnAnswer == "y":
         lengthOfLawn = float(input("Enter length of lawn:\n>> "))
         widthOfLawn = float(input("Enter width of lawn:\n>> "))
-        totalSizeOfLawn = lengthOfLawn*widthOfLawn
+        totalSizeOfLawn = lengthOfLawn * widthOfLawn
         totalPriceOfLawn = totalSizeOfLawn * 15.50
         totalTimeOfLawn = totalSizeOfLawn * 20
-        print("Price: £",totalPriceOfLawn,"m^2, Time to Take:",totalTimeOfLawn,"minutes")
-    elif wantLawn == "n":
+        print("Price: £", totalPriceOfLawn, "m^2, Time to Take:", totalTimeOfLawn, "minutes")
+        TheLawn = totalPriceOfLawn, totalTimeOfLawn, totalSizeOfLawn
+    elif wantLawnAnswer == "n":
         print("No lawn for you")
-    wantConcretePatio = input("Do you want a Concrete Patio: y/n\n>>").lower()
-    if wantConcretePatio == "y":
+    else:
+        print("Invalid Option, try again.")
+        wantLawn()
+    wantConcretePatio()
+
+def wantConcretePatio():
+    wantConcretePatioAnswer = input("Do you want a Concrete Patio: y/n\n>>").lower()
+    if wantConcretePatioAnswer == "y":
         lengthOfConcretePatio = float(input("Enter length of Concrete Patio:\n>> "))
         widthOfConcretePatio = float(input("Enter width of Concrete Patio:\n>> "))
         totalSizeOfConcretePatio = lengthOfConcretePatio * widthOfConcretePatio
         totalPriceOfConcretePatio = totalSizeOfConcretePatio * 20.99
         totalTimeOfConcretePatio = totalSizeOfConcretePatio * 20
         print("Price: £", totalPriceOfConcretePatio, "m^2, Time to Take:", totalTimeOfConcretePatio, "minutes")
-    elif wantConcretePatio == "n":
+    elif wantConcretePatioAnswer == "n":
         print("No Concrete Patio for you")
-    wantWoodenDeck = input("Do you want a woodendeck: y/n\n>>").lower()
-    if wantWoodenDeck == "y":
+    else:
+        print("Invalid Option, try again.")
+        wantConcretePatio()
+    wantWoodenDeck()
+
+
+def wantWoodenDeck():
+    wantWoodenDeckAnswer = input("Do you want a woodendeck: y/n\n>>").lower()
+    if wantWoodenDeckAnswer == "y":
         lengthOfWoodenDeck = float(input("Enter length of WoodenDeck:\n>> "))
         widthOfWoodenDeck = float(input("Enter width of Wooden Deck:\n>> "))
         totalSizeOfWoodenDeck = lengthOfWoodenDeck * widthOfWoodenDeck
         totalPriceOfWoodenDeck = totalSizeOfWoodenDeck * 15.75
         totalTimeOfWoodenDeck = totalSizeOfWoodenDeck * 30
         print("Price: £", totalPriceOfWoodenDeck, "m^2, Time to Take:", totalTimeOfWoodenDeck, "minutes")
-    elif wantWoodenDeck== "n":
+    elif wantWoodenDeckAnswer == "n":
         print("No WoodenDeck for you")
-    wantPond = input("Do you want a Pond: y/n\n>>").lower()
-    if wantPond == "y":
+    else:
+        print("Invalid Option, try again.")
+        wantWoodenDeck()
+    wantPond()
+
+
+def wantPond():
+    wantPondAnswer = input("Do you want a Pond: y/n\n>>").lower()
+    if wantPondAnswer == "y":
         lengthOfPond = float(input("Enter length of WoodenDeck:\n>> "))
         widthOfPond = float(input("Enter width of Wooden Deck:\n>> "))
         totalSizeOfPond = lengthOfPond * widthOfPond
         totalPriceOfPond = totalSizeOfPond * 25
         totalTimeOfPond = totalSizeOfPond * 45
         print("Price: £", totalPriceOfPond, "m^2, Time to Take:", totalTimeOfPond, "minutes")
-    elif wantPond== "n":
+    elif wantPondAnswer == "n":
         print("No Pond for you")
-    wantWaterFeature = input("Want a water feature y/n:\n>>").lower()
-    if wantWaterFeature == "y":
+    else:
+        print("Invalid Option, try again.")
+        wantPond()
+    wantWaterFeature()
+
+def wantWaterFeature():
+    wantWaterFeatureAnswer = input("Want a water feature y/n:\n>>").lower()
+    if wantWaterFeatureAnswer == "y":
         howManyWaterFeatures = float(input("How many water featres do you want:\n>>"))
         priceOfWaterFeature = howManyWaterFeatures * 150
         timeToTakeForWaterFeature = howManyWaterFeatures * 60
         print("Price: £", priceOfWaterFeature, "m^2, Time to Take:", timeToTakeForWaterFeature, "minutes")
-    elif wantWaterFeature == "n":
+    elif wantWaterFeatureAnswer == "n":
         print("No water feature for you:")
-    wantlamp = input("Want a water feature y/n:\n>>").lower()
-    if wantlamp == "y":
+    else:
+        print("Invalid Option, try again.")
+        wantWaterFeature()
+    wantLamp()
+
+def wantLamp():
+    wantlampAnswer = input("Want a water feature y/n:\n>>").lower()
+    if wantlampAnswer == "y":
         howManylamp = float(input("How many water featres do you want:\n>>"))
         priceOflamp = howManylamp * 5
         timeToTakeForlamp = howManylamp * 10
         print("Price: £", priceOflamp, "m^2, Time to Take:", timeToTakeForlamp, "minutes")
-    elif wantlamp == "n":
+    elif wantlampAnswer == "n":
         print("No lamp for you:")
-    garden.write("Lawn:"+"£"+totalPriceOfLawn+totalSizeOfLawn+"m^2"+totalTimeOfLawn+"minutes"+", Concrete Patio"+"£"+totalPriceOfConcretePatio+totalSizeOfConcretePatio+"m^2"+totalTimeOfConcretePatio+
-"minutes"+", Wooden deck"+"£"+totalPriceOfWoodenDeck+totalSizeOfWoodenDeck+"m^2"+totalTimeOfWoodenDeck+"minutes"+", Pond"+"£"+totalPriceOfPond+totalSizeOfPond+"m^2"+totalTimeOfPond+"minutes"+" ,Water feature"+
-"£"+priceOfWaterFeature+",Water features:"+howManyWaterFeatures+timeToTakeForWaterFeature+"minutes"+", Garden lights"+"£"+priceOflamp+"Lamps"+howManylamp+timeToTakeForlamp+"minutes")
-    garden.close()
-    startMenu()
+    else:
+        print("Invalid Option, try again.")
+        wantLamp()
+
+
 def reviews():
     pass
 
-def oldDocumnents():
-    pass
 
 startMenu()
