@@ -1,13 +1,15 @@
-layingLawnPrice=15.50 #per m2
-layingLawnTime=20 #mins per m2
-Layingaconcretepatio £20.99 per m2
-20 mins per m2
-Laying a wooden deck £15.75 per m2
-30 mins per m2
-Digging and filling a rectangular pond £25.00 per m2
-45 mins per m2
-Installing a water feature (e.g. a fountain) £150.00 each 60 mins each
-Installing garden lights £5.00 each 10 mins each
+layingLawnPrice = 15.50 #per m2
+layingLawnTime = 20 #mins per m2
+layingConcretePatioPrice=20.99 #per m2
+layingConcretePatioTime = 20 #mins per m2
+layingWoodenDeckPrice = 15.75 #per m2
+layingWoodenDeckTime = 30 #mins per m2
+layingPondPrice = 25.00 #per m2
+layingPondTime = 45 #mins per m2
+layingwaterFeaturePrice = 150.00
+layingwaterFeatureTime = 60 #mins each
+layingGardenLightsPrice = 5.00
+layingGardenLightsTime = 10 #mins each
 
 
 def startMenu():
@@ -33,11 +35,11 @@ Press 4: Exit
 def writeToDocumnents():
     garden = open("garden.txt", "a")
     garden.write(
-        name + ":\nLawn:\n" + theLawn +
-        "\nConcrete patio:\n" + theConcretePatio +
-        "\nWooden Deck:\n" + theWoodDeck \
-        + "\nPond:\n" + thePond + "\nthe water feature:\n" + theWater + "\nGarden lights:\n" + theLawn + "\nTotal cost for materials:\n" \
-        + totalCostForMats + "\nTotal cost for labour:\n" + totalCostForLabour + "\nTotal cost :\n" + totalCost)
+        name + ":\nLawn:\n" + theLawn +\
+"\nConcrete patio:\n" + theConcretePatio +\
+"\nWooden Deck:\n" + theWoodDeck\
++ "\nPond:\n" + thePond + "\nthe water feature:\n" + theWater + "\nGarden lights:\n" + theLamp + "\nTotal cost for materials:\n"\
++ totalCostForMats + "\nTotal cost for labour:\n" + totalCostForLabour + "\nTotal cost :\n" + totalCost)
     startMenu()
 
 
@@ -55,7 +57,7 @@ def wantLawn():
         widthOfLawn = float(input("Enter width of lawn:\n>> "))
         totalSizeOfLawn = lengthOfLawn * widthOfLawn
         totalPriceOfLawn = totalSizeOfLawn * layingLawnPrice
-        totalTimeOfLawn = totalSizeOfLawn * 20
+        totalTimeOfLawn = totalSizeOfLawn * layingLawnTime
         print("Price: £", totalPriceOfLawn, "m^2, Time to Take:", totalTimeOfLawn, "minutes")
         theLawn = "£" + str(totalPriceOfLawn) + "" + str(totalTimeOfLawn) + " minutes " \
                   + str(totalSizeOfLawn) + "m^2 (" + str(lengthOfLawn) + "m" + str(widthOfLawn) + "m)"
@@ -74,8 +76,8 @@ def wantConcretePatio():
         lengthOfConcretePatio = float(input("Enter length of Concrete Patio:\n>> "))
         widthOfConcretePatio = float(input("Enter width of Concrete Patio:\n>> "))
         totalSizeOfConcretePatio = lengthOfConcretePatio * widthOfConcretePatio
-        totalPriceOfConcretePatio = totalSizeOfConcretePatio * 20.99
-        totalTimeOfConcretePatio = totalSizeOfConcretePatio * 20
+        totalPriceOfConcretePatio = totalSizeOfConcretePatio * layingConcretePatioPrice
+        totalTimeOfConcretePatio = totalSizeOfConcretePatio * layingConcretePatioTime
         print("Price: £", totalPriceOfConcretePatio, "m^2, Time to Take:", totalTimeOfConcretePatio, "minutes")
         theConcretePatio = "£" + str(totalPriceOfConcretePatio) + "" + str(
             totalTimeOfConcretePatio) + " minutes " + str(totalSizeOfConcretePatio) + \
@@ -95,8 +97,8 @@ def wantWoodenDeck():
         lengthOfWoodenDeck = float(input("Enter length of WoodenDeck:\n>> "))
         widthOfWoodenDeck = float(input("Enter width of Wooden Deck:\n>> "))
         totalSizeOfWoodenDeck = lengthOfWoodenDeck * widthOfWoodenDeck
-        totalPriceOfWoodenDeck = totalSizeOfWoodenDeck * 15.75
-        totalTimeOfWoodenDeck = totalSizeOfWoodenDeck * 30
+        totalPriceOfWoodenDeck = totalSizeOfWoodenDeck * layingWoodenDeckPrice
+        totalTimeOfWoodenDeck = totalSizeOfWoodenDeck * layingWoodenDeckTime
         print("Price: £", totalPriceOfWoodenDeck, "m^2, Time to Take:", totalTimeOfWoodenDeck, "minutes")
         theWoodDeck = "£" + str(totalPriceOfWoodenDeck) + "" + str(totalTimeOfWoodenDeck) + " minutes " + str(
             totalSizeOfWoodenDeck) + \
@@ -116,8 +118,8 @@ def wantPond():
         lengthOfPond = float(input("Enter length of WoodenDeck:\n>> "))
         widthOfPond = float(input("Enter width of Wooden Deck:\n>> "))
         totalSizeOfPond = lengthOfPond * widthOfPond
-        totalPriceOfPond = totalSizeOfPond * 25
-        totalTimeOfPond = totalSizeOfPond * 45
+        totalPriceOfPond = totalSizeOfPond * layingPondPrice
+        totalTimeOfPond = totalSizeOfPond * layingPondTime
         print("Price: £", totalPriceOfPond, "m^2, Time to Take:", totalTimeOfPond, "minutes")
         thePond = "£" + str(totalPriceOfPond) + "" + str(totalTimeOfPond) + " minutes " + str(totalSizeOfPond) + \
                   "m^2 (" + str(lengthOfPond) + "m" + str(widthOfPond) + "m)"
@@ -134,8 +136,8 @@ def wantWaterFeature():
     wantWaterFeatureAnswer = input("Want a water feature y/n:\n>>").lower()
     if wantWaterFeatureAnswer == "y":
         howManyWaterFeatures = float(input("How many water featres do you want:\n>>"))
-        priceOfWaterFeature = howManyWaterFeatures * 150
-        timeToTakeForWaterFeature = howManyWaterFeatures * 60
+        priceOfWaterFeature = howManyWaterFeatures * layingwaterFeaturePrice
+        timeToTakeForWaterFeature = howManyWaterFeatures * layingwaterFeatureTime
         print("Price: £", priceOfWaterFeature, "m^2, Time to Take:", timeToTakeForWaterFeature, "minutes")
         theWater = "£" + str(priceOfWaterFeature) + "" + str(timeToTakeForWaterFeature) + " minutes " + str(
             howManyWaterFeatures) + "water features"
@@ -152,8 +154,8 @@ def wantLamp():
     wantlampAnswer = input("Want a water feature y/n:\n>>").lower()
     if wantlampAnswer == "y":
         howManylamp = float(input("How many water featres do you want:\n>>"))
-        priceOflamp = howManylamp * 5
-        timeToTakeForlamp = howManylamp * 10
+        priceOflamp = howManylamp * layingGardenLightsPrice
+        timeToTakeForlamp = howManylamp * layingGardenLightsTime
         print("Price: £", priceOflamp, "m^2, Time to Take:", timeToTakeForlamp, "minutes")
         thelamp = "£" + str(priceOflamp) + "" + str(timeToTakeForlamp) + " minutes " + str(howManylamp) + "lamps"
     elif wantlampAnswer == "n":
@@ -169,7 +171,7 @@ def totalCosts():
     global totalCostForLabour, totalCostForMats, totalCost
     totalCostForMats = totalPriceOfLawn + totalPriceOfConcretePatio + totalPriceOfWoodenDeck + totalPriceOfPond + priceOfWaterFeature + priceOflamp
     totalLabourTime = totalTimeOfLawn + totalTimeOfConcretePatio + totalTimeOfWoodenDeck + totalTimeOfPond + timeToTakeForWaterFeature + timeToTakeForlamp
-    hourlyCharge = 1649
+    hourlyCharge = 16.49
     totalCostForLabour = hourlyCharge * (totalLabourTime / 60)
 
 
